@@ -20,4 +20,5 @@ while True:
     data = client.recv(2048)
     print(f"[{str(datetime.now())}]", data.decode("utf-8"))
 
-    break
+    if message == "stop":
+        break
