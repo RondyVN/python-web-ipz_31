@@ -23,10 +23,9 @@ while True:
         time.sleep(5)
         print(f"[{str(datetime.now())}] {address}", data.decode("utf-8"))
 
-        echo = data.decode("utf-8")
-        user_socket.send(echo.encode("utf-8"))
+        user_socket.send(data)
 
-        if echo == "stop":
+        if data.decode("utf-8") == "stop":
             user_socket.close()
             break
 
